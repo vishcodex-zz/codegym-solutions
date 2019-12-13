@@ -1,0 +1,9 @@
+Greatest common divisor (GCD).
+Enter 2 positive integers from the keyboard.
+Display the greatest common divisor.
+
+Requirements:
+•	The program should read 2 lines from the keyboard.
+•	If the entered lines can't be converted to positive integers, throw an exception.
+•	The program should display data on the screen.
+•	The program should display the greatest common divisor (GCD) of the numbers read from the keyboard and then terminate successfully.

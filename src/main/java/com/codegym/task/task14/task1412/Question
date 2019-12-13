@@ -1,0 +1,14 @@
+/*
+
+1. Write an implementation of the printMainInfo method:
+1.1. If a Drawable object is passed to the method, call the draw method on the object.
+1.2. If a Movable object is passed to the method, call the move method on the object.
+
+Requirements:
+The Solution class must implement a printMainInfo method with one Object parameter.
+The printMainInfo method must be static.
+The printMainInfo method must have the widest level of access (public).
+The printMainInfo method must call the draw method on the passed object if the object implements the Drawable interface.
+The printMainInfo method must call the move method on the passed object if the object implements the Movable interface.
+
+*/

@@ -1,0 +1,21 @@
+/**
+
+
+1. Create a public static Goose class.
+2. Create a public static Dragon class.
+3. Make the Goose class inherit either BigAnimal or SmallAnimal. Think about which would be more logical.
+4. Make the Dragon class inherit either BigAnimal or SmallAnimal. Think about which would be more logical.
+5. Make the Goose and Dragon classes override the String getSize() method and make its visibility as wide as possible.
+6. In the Goose class, the getSize method should return "A goose is small, " + <parent class>.getSize().
+7. In the Dragon class, the getSize method should return "A dragon is big, " + <parent class>.getSize().
+
+Requirements:
+•	The Goose class must be inside the Solution class and must be static.
+•	The Dragon class must be inside the Solution class and must be static.
+•	The Goose class must be a descendant of the SmallAnimal class.
+•	The Dragon class must be a descendant of the BigAnimal class.
+•	In the Goose class, the getSize method must be overridden. It should return a string formatted as follows: "A goose is small, " + <parent class>.getSize().
+•	In the Dragon class, the getSize method must be overridden. It should return a string formatted as follows: "A dragon is big, " + <parent class>.getSize().
+•	The visibility of the overridden getSize methods in the Goose and Dragon classes must be made as wide as possible.
+
+**/

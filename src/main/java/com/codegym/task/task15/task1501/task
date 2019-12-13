@@ -1,0 +1,14 @@
+/*
+
+1. Add the Movable, Sellable, and Discountable interfaces to the Clothes class, if possible.
+2. Implement their methods.
+
+Requirements:
+The Clothes class must support the Movable interface.
+The Clothes class must support the Sellable interface.
+The Clothes class must support the Discountable interface.
+The Clothes class must implement the isMovable method.
+The Clothes class must implement a getAllowedAction method with no parameters.
+The Clothes class must implement a getAllowedAction method with one String parameter.
+
+*/

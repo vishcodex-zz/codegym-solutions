@@ -1,0 +1,24 @@
+/*
+
+1. Enter a few strings (keys) from the keyboard [in a loop].
+The following strings (keys) are allowed: "user", "loser", "coder", "programmer".
+Stop reading in strings after reading in any string that does not match one of the above.
+
+2. For each entered string:
+2.1. Create the appropriate object [see Person.java], e.g. create a User object for the string "user".
+2.2. Pass this object to the doWork method.
+3. Write an implementation of the doWork method, which:
+3.1. Calls the live() method on the passed object if person is a User.
+3.2. Calls the doNothing() method if person is a Loser.
+3.3. Calls the writeCode() method if person is a Coder.
+3.4. Calls the enjoy() method if person is a Programmer.
+
+Requirements:
+•	The main method must read strings from the keyboard.
+•	The main method should stop reading strings from the keyboard as soon as the entered string does not match one of the allowed strings ("user", "loser", "coder", "programmer").
+•	For each correctly entered string ("user", "loser", "coder", "programmer"), call the doWork method with the appropriate Person object as the argument.
+•	The Solution class must implement a doWork method with one Person parameter.
+•	The doWork method should call the live() method on the passed object if it is a User.
+•	The doWork method should call the doNothing() method on the passed object if it is a Loser.
+•	The doWork method should call the writeCode() method on the passed object if it is a Coder.
+•	The doWork method should call the enjoy() method on the passed object if it is a Programmer.  */
