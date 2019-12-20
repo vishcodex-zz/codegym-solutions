@@ -7,13 +7,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-/*
-CRUD
 
-*/
+
 
 public class Solution {
-    public static List<Person> allPeople = new ArrayList<Person>();
+    public static List<Person> allPeople = new ArrayList<>();
 
     static {
         allPeople.add(Person.createMale("Donald Chump", new Date()));  // id=0
@@ -21,9 +19,7 @@ public class Solution {
     }
 
     public static void main(String[] args) throws ParseException {
-
         SimpleDateFormat sdf = new SimpleDateFormat("MM dd yyyy", Locale.ENGLISH);
-
         if (args[0].equals("-c")) {
             Date d = sdf.parse(args[3]);
             if (args[2].equals("m")) {
@@ -59,8 +55,9 @@ public class Solution {
             Person displayedPerson = allPeople.get(Integer.parseInt(args[1]));
             String displayedGender;
             SimpleDateFormat sdf2 = new SimpleDateFormat("MMM dd yyyy", Locale.ENGLISH);
-            String date_sdfFormat = sdf.format(displayedPerson.getBirthDate());
+            String date_sdfFormat = sdf2.format(displayedPerson.getBirthDate());
             String date_sdf2Format = sdf2.format(sdf2.parse(date_sdfFormat));
+
             if (displayedPerson.getSex().equals(Sex.MALE)) {
                 displayedGender = "m";
             }
