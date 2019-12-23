@@ -5,46 +5,42 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
-//// **** STILL SOLUTION INCOMPLETE
 
 public class Solution {
-    public static List<Thread> threads = new ArrayList<Thread>(5);
+    public static List<Thread> threads = new ArrayList<>(5);
 
     static {
-        threads.add(new Thread(new IndefiniteThread()));
-        threads.add(new Thread(new InterruptedExceptionThread()));
-        threads.add(new Thread(new HurrayThread()));
-        threads.add(new Thread(new MessageThread()));
-        threads.add(new Thread(new ReadNumberThread()));
+        threads.add(new Thread(new thread1()));
+        threads.add(new Thread(new thread2()));
+        threads.add(new Thread(new thread3()));
+        threads.add(new thread4());
+        threads.add(new Thread(new thread5()));
     }
 
     public static void main(String[] args) {
     }
 
+    public static class thread1 implements Runnable {
 
-
-    public static class IndefiniteThread implements Runnable {
         @Override
         public void run() {
-            while (true) {
-            }
+            while (true) ;
         }
     }
 
-    public static class InterruptedExceptionThread implements Runnable {
+    public static class thread2 implements Runnable {
         @Override
         public void run() {
             try {
-                Thread.sleep(5);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
-                System.out.println(e.getClass().getSimpleName());
+                System.out.println("InterruptedException");
             }
         }
     }
 
-    public static class HurrayThread implements Runnable {
+    public static class thread3 implements Runnable {
+
         @Override
         public void run() {
             try {
@@ -52,49 +48,39 @@ public class Solution {
                     System.out.println("Hurray");
                     Thread.sleep(500);
                 }
-            } catch (InterruptedException ignored) {
+            } catch (Exception e) {
             }
         }
     }
 
-    public static class MessageThread extends Thread implements Message {
-        private volatile boolean flag = true;
+    public static class thread4 extends Thread implements Message{
+        private boolean isWarned = false;
         @Override
         public void showWarning() {
-
+            interrupt();
         }
-
         @Override
         public void run() {
-            while (!isInterrupted())
-            {
-                Thread.currentThread().interrupt();
-                return;
-            }
+            while (!isInterrupted()) { }
         }
     }
 
-    public static class ReadNumberThread implements Runnable {
+    public static class thread5 implements Runnable {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int sum=0;
         @Override
         public void run() {
-            while (true){
-                String num = null;
-                try {
-                    num = reader.readLine();
-                } catch (IOException e) {
-                    e.printStackTrace();
+            int sum = 0;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                while (true) {
+                    String inputString = reader.readLine();
+                    if (inputString.equals("N")) {
+                        break;
+                    }
+                    sum += Integer.parseInt(inputString);
                 }
-                if(num.equals("N")){
-
-                    System.out.println(sum);
-                    break;
-                }
-                else {
-                    sum+=(Integer.parseInt(num));
-                }
+                System.out.println(sum);
+            } catch (IOException e) {
             }
         }
     }
